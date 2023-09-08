@@ -10,6 +10,7 @@
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
+  --icon-color: hsl(var(--hue-color), 56%, 12%);
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
   --big-font-size: 2rem;
@@ -74,7 +75,7 @@
 }
 
 .switch input:checked + label {
-  background-color: rgb(114, 63, 255);
+  background-color: #3F6EF3
 }
 
 .switch input:checked + label:after {
@@ -263,7 +264,7 @@ img {
   width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
-  color: var(--second-color);
+  color: var(--icon-color);
 }
 
 .home__social-icon:hover {
@@ -577,65 +578,87 @@ img {
 }
 /*------------------------------*/    
 .dark-mode {
-  --clr-background: #263238;
-  --clr-base: black;
-  --clr-primary: #69f0ae;
-  --clr-gray: #e0f7fa;
+  --hue-color: 224;
+  background: #272727;
+ color: #fff;
+ --icon-color : #fffff7;
+ 
 }
 
-//container that holds the switch
-.wrapper-color-switch {
+/*==================== QUALIFICATION ====================*/
+.qualification_tabs {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 1em;
+  justify-content: space-evenly;
+  margin-bottom: var(--mb-2);
 }
 
-//label for switch that is interactive
-.color-switch {
-  width: 4em;
-  height: 2em;
-  border-radius: 10em;
-  background: var(--clr-base);
-  border: 2px solid var(--clr-primary);
-  position: absolute;
+.qualification_button {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  color: var(--first-color);
   cursor: pointer;
 }
 
-//circle toggle that animates backward and forward
-.color-switch-toggle {
-  width: 1.6em;
-  height: 1.6em;
-  background: var(--clr-primary);
-  position: absolute;
-  border-radius: 10em;
-  top: 0.2em;
-  left: 0.2em;
-  cursor: pointer;
-  transition: all 250ms ease-in-out;
+.qualification_button:hover {
+  color: var(--first-color);
 }
 
-//text label that indicates switch state
-//light by default
-.color-switch::before {
-  content: "Light Mode On";
-  position: absolute;
+.qualification_icon {
+  font-size: 1.8rem;
+  margin-right: var(--mb-0-25);
+}
+
+.qualification_data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+}
+
+.qualification_title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.qualification_subtitle {
   display: inline-block;
-  width: 12em;
-  left: -8em;
-  top: 0.4em;
+  font-size: var(--small-font-size);
+  /* margin-bottom: var(--mb-1); */
 }
 
-//animate circle toggle if switch is on
-#input-color-switch:checked ~ label .color-switch-toggle {
-  transform: translatex(2em);
+.qualification_subtitle a {
+  color: inherit;
 }
 
-//change text of before if switch is on
-#input-color-switch:checked ~ .color-switch::before {
-  content: "Dark Mode On";
+.qualification_grade{
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
 }
 
-//hide input
-#input-color-switch {
+.qualification_calendar {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.qualification_circle {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+
+.qualification_line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--first-color);
+  transform: translate(6px, -7px);
+}
+
+.qualification-content {
+  display: block;
+}
+
+.qualification-inactive {
   display: none;
+}
